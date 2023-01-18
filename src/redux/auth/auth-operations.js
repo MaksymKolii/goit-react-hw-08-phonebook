@@ -4,7 +4,6 @@ axios.defaults.baseURL =
   'https://connections-api.herokuapp.com';
 
   const token = {
-
     set(token){
         axios.defaults.headers.common.Authorization = `Bearer ${token}`
     },
@@ -45,6 +44,24 @@ export const register = createAsyncThunk(
       try {
         await axios.post('/users/logout');
         token.unset()
+      } catch (error) {
+        return rejectWithValue(error);
+      }
+    }
+  );
+
+  export const fetchCurrentUser = createAsyncThunk(
+    'auth/refresh',
+    async (_,{ rejectWithValue, getState }) => {
+        const tokenLS = getState().auth.token;
+        if(!tokenLS){
+            return rejectWithValue('Token not exist, or expired ')
+        }
+        token.set(tokenLS)
+      try {
+        const { data } = await axios('/users/current');
+        
+        return data;
       } catch (error) {
         return rejectWithValue(error);
       }

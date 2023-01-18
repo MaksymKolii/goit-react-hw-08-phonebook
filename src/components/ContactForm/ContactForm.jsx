@@ -27,7 +27,7 @@ export const ContactForm = ({ closeForm }) => {
   const formik = useFormik({
     initialValues: {
       name: '',
-      phone: '',
+      number: '',
       // status: '',
     },
 
@@ -38,15 +38,15 @@ export const ContactForm = ({ closeForm }) => {
         .matches(nameTemplates, 'Invalid first, or last name')
         .max(35, 'Must be 35 characters or less')
         .required('Required'),
-      phone: yup
+      number: yup
         .string()
         .matches(phoneTemplates, 'Phone number is not valid')
         .required('Required'),
     }),
 
     onSubmit: async (values, { resetForm }) => {
-      const isNameExist = contacts.find(({ name, phone }) => {
-        return name === values.name || phone === values.phone;
+      const isNameExist = contacts.find(({ name, number }) => {
+        return name === values.name || number === values.number;
       });
 
       if (isNameExist) {
@@ -84,17 +84,17 @@ export const ContactForm = ({ closeForm }) => {
       <Label htmlFor="Number">
         Number
         <Input
-          id="phone"
-          name="phone"
+          id="number"
+          name="number"
           type="text"
           onChange={formik.handleChange}
-          value={formik.values.phone}
+          value={formik.values.number}
           placeholder="Enter phone number"
         />
       </Label>
 
-      {formik.touched.phone && formik.errors.phone ? (
-        <Div>{formik.errors.phone}</Div>
+      {formik.touched.number && formik.errors.number ? (
+        <Div>{formik.errors.number}</Div>
       ) : null}
       <Button type="submit">Press to submit</Button>
     </Form>

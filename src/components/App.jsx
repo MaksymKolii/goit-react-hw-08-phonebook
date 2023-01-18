@@ -10,6 +10,11 @@ import { Filter } from './Filter/Filter';
 import { Section } from './Section/Section';
 import { GlobalStyle } from './Utils/GlobalStyle';
 
+
+import { Registerform } from './RegisterForm/RegisterForm';
+import { Loginform } from './LoginForm/LoginForm';
+import { UserAuthMenu } from './UserAuthMenu/UserAuthMenu';
+
 export const App = () => {
   const [isListShown, setIsListShown] = useState(false);
   const [isFormShown, setFormShown] = useState(false);
@@ -30,6 +35,9 @@ export const App = () => {
   };
   return (
     <>
+    <UserAuthMenu/>
+    <Registerform/>
+    <Loginform/>
       <Section>
         {isListShown ? (
           <>
