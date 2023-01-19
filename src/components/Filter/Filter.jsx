@@ -15,7 +15,7 @@ export const Filter = () => {
 
   if (check.trim() === '') {
     Notify.warning(`You didn't put anything !`);
-   return;
+   
   }
   dispatch(setFilter(check.trim().toLowerCase()))
   }
