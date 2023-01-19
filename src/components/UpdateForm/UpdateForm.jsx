@@ -12,14 +12,14 @@ import { updateContact } from 'redux/contacts/contacts-operations';
 
 export const UpdateForm = ({ closeForm, contactToUpdate }) => {
   const [name, setName] = useState(contactToUpdate.name);
-  const [phone, setPhone] = useState(contactToUpdate.phone);
+  const [number, setPhone] = useState(contactToUpdate.number);
   const dispatch = useDispatch()
 
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(updateContact({
       ...contactToUpdate,
-      name,phone
+      name,number
     }))
     closeForm();
   };
@@ -30,7 +30,7 @@ export const UpdateForm = ({ closeForm, contactToUpdate }) => {
         setName(value);
 
         break;
-      case 'phone':
+      case 'number':
         setPhone(value);
         break
       default:
@@ -54,11 +54,11 @@ export const UpdateForm = ({ closeForm, contactToUpdate }) => {
       <Label>
         Number
         <Input
-          id="phone"
-          name="phone"
+          id="number"
+          name="number"
           type="text"
           onChange={handleChange}
-          value={phone}
+          value={number}
           placeholder="Enter phone number"
         />
       </Label>
