@@ -8,12 +8,7 @@ import { selectIsLoading } from '../../redux/contacts/contacts-selectors';
 import { Loader } from '../../components/Loader/Loader';
 import { Filter } from '../../components/Filter/Filter';
 import { Section } from '../../components/Section/Section';
-// import { GlobalStyle } from './Utils/GlobalStyle';
 
-
-// import { Registerform } from './RegisterForm/RegisterForm';
-// import { Loginform } from './LoginForm/LoginForm';
-// import { UserAuthMenu } from './UserAuthMenu/UserAuthMenu';
 
 export const UsersPage = () => {
   const [isListShown, setIsListShown] = useState(false);
@@ -35,9 +30,6 @@ export const UsersPage = () => {
   };
   return (
     <>
-    {/* <UserAuthMenu/>
-    <Registerform/>
-    <Loginform/> */}
       <Section>
         {isListShown ? (
           <>
@@ -58,8 +50,6 @@ export const UsersPage = () => {
           </>
         )}
       </Section>
-
-      {/* <GlobalStyle /> */}
     </>
   );
 };
