@@ -74,16 +74,16 @@ import { Layout } from 'Pages/Layout/Layout';
 
 export const App =()=>{
 return(
-  <Routes>
-    <Route path="/" element={<Layout/>}>
-      <Route index element={<HomePage/>}/>
-      <Route path='users' element={<UsersPage/>}/>
-      <Route path='register' element={<RegisterPage/>}/>
-      <Route path='login' element={<LoginPage/>}/>
-      <GlobalStyle />
-    </Route>
+  <>  <Routes>
+  <Route path="/" element={<Layout/>}>
+    <Route index element={<HomePage/>}/>
+    <Route path='users' element={<UsersPage/>}/>
+    <Route path='register' element={<RegisterPage/>}/>
+    <Route path='login' element={<LoginPage/>}/>
+  </Route>
+</Routes>
+ <GlobalStyle /></>
 
-  </Routes>
   
 )
 }
