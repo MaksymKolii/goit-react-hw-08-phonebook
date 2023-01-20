@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "redux/auth/auth-operations";
 
-export const Loginform =()=>{
+export const LoginForm =()=>{
 
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')

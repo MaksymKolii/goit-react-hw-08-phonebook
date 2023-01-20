@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "redux/auth/auth-operations";
 
-export const Registerform =()=>{
+export const RegisterForm =()=>{
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
