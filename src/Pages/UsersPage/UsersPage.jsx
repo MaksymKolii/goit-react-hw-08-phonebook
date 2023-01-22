@@ -10,7 +10,7 @@ import { Filter } from '../../components/Filter/Filter';
 import { Section } from '../../components/Section/Section';
 
 
-export const UsersPage = () => {
+const UsersPage = () => {
   const [isListShown, setIsListShown] = useState(false);
   const [isFormShown, setFormShown] = useState(false);
   const dispatch = useDispatch();
@@ -53,3 +53,4 @@ export const UsersPage = () => {
     </>
   );
 };
+export default UsersPage
