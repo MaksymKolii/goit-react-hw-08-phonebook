@@ -7,7 +7,7 @@ import { ContactsList } from '../../components/ContactsList/ContactsList';
 import { selectIsLoading } from '../../redux/contacts/contacts-selectors';
 import { Loader } from '../../components/Loader/Loader';
 import { Filter } from '../../components/Filter/Filter';
-import { Section } from '../../components/Section/Section';
+// import { Section } from '../../components/Section/Section';
 
 
 const UsersPage = () => {
@@ -30,7 +30,7 @@ const UsersPage = () => {
   };
   return (
     <>
-      <Section>
+      {/* <Section> */}
         {isListShown ? (
           <>
             {isLoading && <Loader />}
@@ -49,7 +49,7 @@ const UsersPage = () => {
             ></Button>
           </>
         )}
-      </Section>
+      {/* </Section> */}
     </>
   );
 };
