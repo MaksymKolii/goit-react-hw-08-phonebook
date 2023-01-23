@@ -9,13 +9,13 @@ export const Button = ({ text, clickHandler, type }) => {
   );
 };
 
-export const IButton = ({ children, clickHandler, ...allyProps }) => (
-  <button
-    type="button"
-    className={css.IButton}
-    onClick={clickHandler}
-    {...allyProps}
-  >
-    {children}
-  </button>
-);
+// export const IButton = ({ children, clickHandler, ...allyProps }) => (
+//   <button
+//     type="button"
+//     className={css.IButton}
+//     onClick={clickHandler}
+//     {...allyProps}
+//   >
+//     {children}
+//   </button>
+// );
