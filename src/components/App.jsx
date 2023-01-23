@@ -8,7 +8,7 @@ import PrivateRoute from 'HOCs/PrivateRoute';
 import PublicRoute from 'HOCs/PublicRoute';
 import { selectIsFetchingCurrentUser } from '../redux/auth/auth-selectors';
 
-import { ChakraProvider} from '@chakra-ui/react';
+// import { ChakraProvider} from '@chakra-ui/react';
 import { GlobalStyle } from '../components/Utils/GlobalStyle';
 
 const HomePage = lazy(() => import('Pages/HomePage/HomePage'));
@@ -29,7 +29,7 @@ export const App = () => {
         <p>Wait a little bit</p>
       ) : (
         <Suspense>
-          <ChakraProvider>
+          {/* <ChakraProvider> */}
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route
@@ -66,7 +66,7 @@ export const App = () => {
                 />
               </Route>
             </Routes>
-          </ChakraProvider>
+          {/* </ChakraProvider> */}
         </Suspense>
       )}
 

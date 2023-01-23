@@ -1,10 +1,10 @@
 import { React } from 'react';
-// import { Label, Input } from './Filter.styled';
+import { Label, Input } from './Filter.styled';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import PropTypes from 'prop-types';
 import { setFilter } from '../../redux/filter/filterSlice';
 import { useDispatch } from 'react-redux';
-import { Input,Stack } from '@chakra-ui/react';
+// import { Input,Stack } from '@chakra-ui/react';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const Filter = () => {
  
 
   return (
-    <Stack spacing={4}>
+    <Label spacing={4}>
   {/* <InputGroup>  */}
     {/* <InputLeftAddon children='+234' /> */}
     <Input type='text' name="filter" placeholder='Find contacts by name'width='25rem' color='black'
@@ -34,7 +34,7 @@ export const Filter = () => {
               />
   {/* </InputGroup> */}
 
-</Stack>
+</Label>
 
   );
 };
