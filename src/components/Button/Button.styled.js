@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export const ButtonB = styled.button`
-  min-width: 150px;
+  min-width: 100px;
   padding: 10px;
   margin-top: 6px;
   font-size: 16px;
@@ -13,7 +13,10 @@ export const ButtonB = styled.button`
   transition: background-color 250ms linear;
   &:hover,
   &:focus {
-    background-color: #188ce8;
-    color: white;
+    /* background-color: #188ce8;
+    color: white; */
+
+    background-color: #083045;
+  color: rgb(76, 181, 245);
   }
 `;

@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { ContactListItem } from '../ContactItem/ContactItem';
-// import { ListUl } from './ContactList.styled';
+
 import { ButtonB } from '../Button/Button.styled';
 import { UpdateForm } from 'components/UpdateForm/UpdateForm';
 import { useState } from 'react';
 
-// import {selectContactsOptions} from'../../redux/contacts/contacts-selectors'
+
 //* re export
 import { contactsSelectors } from 'redux/contacts';
 
@@ -26,7 +26,7 @@ export const ContactsList = () => {
   const closeForm = () => {
     setContactToUpdate(null);
   };
-
+// border:'2px solid red'
   return (
     <Box sx={{ width: '100%'}}>
       <Grid
@@ -36,7 +36,7 @@ export const ContactsList = () => {
       >
         {contacts.map(option => (
           <Grid item xs={2} sm={4} md={4} key={option.id} >
-            <Box sx={{bgcolor:' rgb(48, 64, 64)', border:'2px solid red',padding:'5px', color:'rgb(76, 181, 245)', borderRadius:'6px'}}><ContactListItem key={option.id} {...option} />
+            <Box sx={{bgcolor:' rgb(48, 64, 64)',padding:'5px', color:'rgb(76, 181, 245)', borderRadius:'6px'}}  boxShadow={3}><ContactListItem key={option.id} {...option} />
             <ButtonB onClick={() => showUpdateForm(option.id)}>
               Update User
             </ButtonB>

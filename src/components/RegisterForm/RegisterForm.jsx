@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "redux/auth/auth-operations";
+import { Form, Label, Input, Button} from '../ContactForm/ContactForm.styled';
 
 export const RegisterForm =()=>{
 const [name, setName] = useState('')
@@ -38,18 +39,18 @@ switch (name) {
 }
 
     return (
-        <form onSubmit ={handleSubmit}>
-            <label> Name: 
-                <input type='text' name="name" value={name} onChange={handlechange}/>
-            </label>
-            <label> Email: 
-                <input type='email' name="email" value={email} onChange={handlechange}/>
-            </label>
-            <label> Password: 
-                <input type='password' name="password" value={password} onChange={handlechange}/>
-            </label>
-            <button>Register</button>
+        <Form onSubmit ={handleSubmit}>
+            <Label> Name: 
+                <Input type='text' name="name" value={name} onChange={handlechange}/>
+            </Label>
+            <Label> Email: 
+                <Input type='email' name="email" value={email} onChange={handlechange}/>
+            </Label>
+            <Label> Password: 
+                <Input type='password' name="password" value={password} onChange={handlechange}/>
+            </Label>
+            <Button>Register</Button>
 
-        </form>
+        </Form>
     )
 }

@@ -1,13 +1,11 @@
 import { React } from 'react';
-// import { Label, Input } from './Filter.styled';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import PropTypes from 'prop-types';
 import { setFilter } from '../../redux/filter/filterSlice';
 import { useDispatch } from 'react-redux';
-// import { Input,Stack } from '@chakra-ui/react';
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import Input from '@mui/material/Input';
+// import Input from '@mui/material/Input';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -16,10 +14,18 @@ const theme = createTheme({
     primary: {
       // Purple and green play nicely together.
       main: 'rgb(76, 181, 245)',
+      darker: '#053e85',
     },
     secondary: {
       // This is green.A700 as hex.
       main: '#11cb5f',
+    },
+
+    custom: {
+      light: '#ffa726',
+      main: '#f57c00',
+      dark: '#ef6c00',
+      contrastText: 'rgba(0, 0, 0, 0.87)',
     },
   },
 });
@@ -41,7 +47,8 @@ export const Filter = () => {
       <Box
         component="form"
         sx={{
-          '& > :not(style)': { m: 1, width: '25ch' },
+          '& > :not(style)': { m: 1, width: '25ch'  },
+          color:'rgb(76, 181, 245)'
         }}
         noValidate
         autoComplete="off"
@@ -52,18 +59,7 @@ export const Filter = () => {
           variant="standard"
           onChange={onChange}
         >
-          <Input color={theme.primary}></Input>
         </TextField>
-        {/* <TextField
-        id="outlined"
-        label={'Find contact by name'}
-        margin="normal"
-        // fullWidth
-        // value={filter}
-        onChange={onChange}
-        sx={{mb:'1rem', bgcolor:' rgb(130, 152, 166)', color:'rgb(76, 181, 245)'}}>
-    
-      </TextField> */}
       </Box>
     </ThemeProvider>
   );
@@ -74,23 +70,3 @@ Filter.propTypes = {
   // value: PropTypes.string,
 };
 
-// import * as React from 'react';
-// import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
-
-// export default function BasicTextFields() {
-//   return (
-//     <Box
-//       component="form"
-//       sx={{
-//         '& > :not(style)': { m: 1, width: '25ch' },
-//       }}
-//       noValidate
-//       autoComplete="off"
-//     >
-//       <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-//       <TextField id="filled-basic" label="Filled" variant="filled" />
-//       <TextField id="standard-basic" label="Standard" variant="standard" />
-//     </Box>
-//   );
-// }

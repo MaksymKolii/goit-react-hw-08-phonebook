@@ -4,6 +4,7 @@ export const Form = styled.form`
   width: 300px;
   border: 2px solid black;
   border-radius: 5px;
+  background-color:rgb(48, 64, 64);
   margin: 30px auto 0 auto;
   padding: 20px;
 `;

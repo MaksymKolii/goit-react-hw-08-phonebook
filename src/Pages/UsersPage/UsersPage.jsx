@@ -34,7 +34,7 @@ const UsersPage = () => {
       {isListShown ? (
         <>
           <Box sx={{ display: 'flex', justifyContent: 'space-evenly',mb:'35px', mt:'35px' }}>
-            {' '}
+          
             {isLoading && <Loader />}
             {!isFormShown && !isLoading && (
               <Button text="Add contact" clickHandler={showForm}></Button>

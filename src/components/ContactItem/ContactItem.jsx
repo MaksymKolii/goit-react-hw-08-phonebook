@@ -1,29 +1,18 @@
 import PropTypes from 'prop-types';
-import { Span, P,} from './ContactItem.styled';
-
-// import { deleteContact } from '../../redux/contacts/contacts-operations';
+import { Span, P} from './ContactItem.styled';
 import { contactsOperations } from 'redux/contacts';
 import { IconButton } from '../IconButton/IconButton';
-// import { Button } from './ContactItem.styled';
-// import { UpdateForm } from 'components/UpdateForm/UpdateForm';
 
 import { ReactComponent as DeleteIcon } from 'Icons/delete2.svg';
 import { useDispatch } from 'react-redux';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Avatar from 'react-avatar';
-
-// import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 
 export const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
-  // const timeReduser = data => {
-  //   const year = data.slice(0, 10);
-  //   const time = data.slice(11, 19);
-  //   return year + '  ' + time;
-  // };
 
   const onDeleteContact = () => {
     dispatch(contactsOperations.deleteContact(id));

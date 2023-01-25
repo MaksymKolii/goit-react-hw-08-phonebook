@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "redux/auth/auth-operations";
 import { selectName} from "redux/auth/auth-selectors";
+import {ButtonB} from '../Button/Button.styled'
 import { Box } from '@mui/material';
 
 
@@ -11,7 +12,7 @@ const name = useSelector(selectName)
     return (
     <Box>
     <p>{`Welcome, ${name} !`}</p>
-    <button onClick={()=>dispatsh(logout())}>Logout</button>
+    <ButtonB onClick={()=>dispatsh(logout())}>Logout</ButtonB>
     
     </Box>)
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "redux/auth/auth-operations";
+import { Form, Label, Input, Button} from '../ContactForm/ContactForm.styled';
 
 export const LoginForm =()=>{
 
@@ -36,16 +37,16 @@ switch (name) {
 }
 
     return (
-        <form onSubmit ={handleSubmit}>
+        <Form onSubmit ={handleSubmit}>
     
-            <label> Email: 
-                <input type='email' name="email" value={email} onChange={handlechange}/>
-            </label>
-            <label> Password: 
-                <input type='password' name="password" value={password} onChange={handlechange}/>
-            </label>
-            <button>Login</button>
+            <Label> Email: 
+                <Input type='email' name="email" value={email} onChange={handlechange}/>
+            </Label>
+            <Label> Password: 
+                <Input type='password' name="password" value={password} onChange={handlechange}/>
+            </Label>
+            <Button>Login</Button>
 
-        </form>
+        </Form>
     )
 }
