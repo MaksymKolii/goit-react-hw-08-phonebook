@@ -1,10 +1,9 @@
-// import { Link } from 'react-router-dom';
+
 import { Link } from 'components/Navigation/Navigation.styled';
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
 // import Link from '@mui/material/Link';
-//color:'rgb(76, 181, 245)'
-// sx={{color:'rgb(76, 181, 245)'}}
+
 
 export const AuthNavigation = () => {
   return (
