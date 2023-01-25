@@ -22,7 +22,7 @@ export const ContactListItem = ({ id, name, number }) => {
   return (
     <>
       <Box sx={{ display: 'flex', justifyContent: 'start',  alignItems :'center',mb:'0.5rem'}}>
-        {' '}
+      
         <Span>
           <Avatar name={name} size="35" round={true} />
         </Span>
