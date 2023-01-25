@@ -25,4 +25,8 @@ a{
     text-decoration: none;
 }
   
+
+  body{
+    background-color: rgb(4, 32, 44)
+  }
 `;

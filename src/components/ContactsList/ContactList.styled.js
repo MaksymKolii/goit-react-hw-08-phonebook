@@ -8,5 +8,5 @@ export const ListUl = styled.ul`
   margin-right: auto;
   margin-left: auto;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 5px;
 `;

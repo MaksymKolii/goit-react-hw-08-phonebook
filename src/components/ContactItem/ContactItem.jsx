@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Span, P, List } from './ContactItem.styled';
+import { Span, P,} from './ContactItem.styled';
 
 // import { deleteContact } from '../../redux/contacts/contacts-operations';
 import { contactsOperations } from 'redux/contacts';
@@ -13,7 +13,10 @@ import { useDispatch } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Avatar from 'react-avatar';
 
-export const ContactListItem = ({ id, name, number}) => {
+// import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+
+export const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   // const timeReduser = data => {
@@ -27,30 +30,28 @@ export const ContactListItem = ({ id, name, number}) => {
     Notify.success(`Contact successfully removed`);
   };
 
-
-
   return (
-    <List>
-      <Span>
-        <Avatar name={name} size="35" round={true} />
-      </Span>
-
-      <P>
-        Name:<Span>{name}</Span>
-      </P>
-      <P>
-        Phone number:<Span>{number}</Span>
-      </P>
-      {/* <P>
-        Created:<Span>{timeReduser(createdAt)}</Span>
-      </P> */}
-
+    <>
+      <Box sx={{ display: 'flex', justifyContent: 'start',  alignItems :'center',mb:'0.5rem'}}>
+        {' '}
+        <Span>
+          <Avatar name={name} size="35" round={true} />
+        </Span>
+        <P>
+          Name:<Span>{name}</Span>
+        </P>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'start',  alignItems :'center'  }}>
+        <P>
+          Phone number:<Span>{number}</Span>
+        </P>
+      
       <IconButton onClick={onDeleteContact} aria-label="Удалить контакт">
         {/* {isDeleting && <LoaderRings />} */}
         <DeleteIcon width={20} height={20}></DeleteIcon>
       </IconButton>
-    
-    </List>
+      </Box>
+    </>
   );
 };
 

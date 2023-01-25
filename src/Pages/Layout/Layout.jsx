@@ -1,4 +1,10 @@
-import { AppBar, Toolbar , Typography, IconButton} from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Container,
+} from '@mui/material';
 import CallIcon from '@mui/icons-material/Call';
 
 import { useSelector } from 'react-redux';
@@ -8,28 +14,52 @@ import { UserAuthMenu } from '../../components/UserAuthMenu/UserAuthMenu';
 import { selectToken } from '../../redux/auth/auth-selectors';
 import { Outlet } from 'react-router-dom';
 
+// import { createTheme } from '@mui/material/styles';
+
+// const theme = createTheme({
+//   status: {
+//     danger: '#e53e3e',
+//   },
+//   palette: {
+//     primary: {
+//       main: ' #04202c',
+//       darker: ' #5b7075',
+//     },
+//     neutral: {
+//       main: '#64748B',
+//       contrastText: '#fff',
+//     },
+//   },
+// });
+
 export const Layout = () => {
   const token = useSelector(selectToken);
 
   return (
     <>
-    {/* <Typography variant='h4'>Phonebook</Typography> */}
-      <header>
-        <AppBar position='static'>
-          <Toolbar><Typography variant='h4' 
-          component='span' sx={{flexGrow:1}}>Phonebook</Typography>
-           <Navigation />
-            {token ? <UserAuthMenu /> : <AuthNavigation />}
-          <IconButton color='inherit'>
-            <CallIcon/>
-          </IconButton>
-         
-          </Toolbar>
-        </AppBar>
-      </header>
-      <main>
-        <Outlet />
-      </main>
+      {/* sx={{ display: 'flex', justifyContent: 'center' }} */}
+      {/* sx={{bgcolor:theme.palette.neutral.main}} */}
+   
+        {' '}
+        <header>
+          <AppBar position="static">
+            <Toolbar>
+              <Typography variant="h4" component="span" sx={{ flexGrow: 1 }}>
+                Phonebook
+              </Typography>
+              <Navigation />
+              {token ? <UserAuthMenu /> : <AuthNavigation />}
+              <IconButton color="inherit">
+                <CallIcon />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
+        </header>
+        <Container sx={{pb:'8rem', minHeight:'100%'}}>
+        <main>
+          <Outlet />
+        </main>
+      </Container>
     </>
   );
 };
