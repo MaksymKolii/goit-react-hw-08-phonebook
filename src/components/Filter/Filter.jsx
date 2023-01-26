@@ -48,7 +48,7 @@ export const Filter = () => {
         component="form"
         sx={{
           '& > :not(style)': { m: 1, width: '25ch'  },
-          color:'rgb(76, 181, 245)'
+          color:''
         }}
         noValidate
         autoComplete="off"
@@ -58,6 +58,7 @@ export const Filter = () => {
           label="Find contact by name"
           variant="standard"
           onChange={onChange}
+          sx={{ input: { color: 'rgb(76, 181, 245)' },label:{color:'rgb(76, 181, 245)'} }}
         >
         </TextField>
       </Box>
