@@ -1,20 +1,13 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { Form, Label, Input, Div , Button} from './ContactForm.styled';
-// import { Button } from 'components/Button/Button';
-// import { nanoid } from 'nanoid';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/contacts-operations';
 import { selectContacts } from 'redux/contacts/contacts-selectors';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-// import { getYesNoStatus } from 'components/services/yesNoApl';
-// import Button from '@mui/material/Button';
-// import Stack from '@mui/material/Stack';
-
 import PropTypes from 'prop-types';
 import * as yup from 'yup';
 
-// import { addContact } from 'redux/contacts/contactsSlice';
 
 export const ContactForm = ({ closeForm }) => {
   const contacts = useSelector(selectContacts);
@@ -30,7 +23,7 @@ export const ContactForm = ({ closeForm }) => {
     initialValues: {
       name: '',
       number: '',
-      // status: '',
+   
     },
 
     validationSchema: yup.object().shape({
@@ -55,13 +48,12 @@ export const ContactForm = ({ closeForm }) => {
         Notify.info(`${values.name} is alredy in contacts!`);
         return;
       }
-      // const stat = await getYesNoStatus();
-      // values.status = stat;
+
 
       dispatch(addContact(values));
 
       Notify.success(`${values.name} was successfully added to contacts`);
-      // resetForm();
+ 
       closeForm();
     },
   });
